@@ -1,0 +1,101 @@
+@base <https://best-lod.github.io/>.
+@prefix foaf: <https://xmlns.com/foaf/0.1/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix dcmitype: <http://purl.org/dc/terms/DCMIType/>.
+@prefix schema: <https://schema.org/>.
+@prefix rdf: <https://www.w3.org/TR/rdf-schema/#>.
+@prefix dbr: <http://dbpedia.org/resource/>.
+@prefix dbo: <http://mappings.dbpedia.org/server/ontology/classes/>.
+@prefix mo: <http://musicontology.com/>.
+@prefix fabio: <http://purl.org/spar/fabio>.
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>.
+@prefix frbr: <https://vocab.org/frbr/core>.
+@prefix gn: <https://www.geonames.org/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix viaf: <https://viaf.org/viaf/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix person: <http://www.w3.org/ns/person/>.
+
+
+
+<person/george_best>
+        rdf:type foaf:Person;
+        foaf:givenName "George"^^xsd:string;
+        foaf:familyName "Best"^^xsd:string;
+        foaf:gender "male"^^xsd:string;
+        owl:sameAs viaf:78341270;
+        owl:sameAs dbr:George_Best;
+        dbo:birthDate "1946-05-22"^^xsd:dateTime;
+        dbo:deathDate "2005-11-25"^^xsd:dateTime;
+        person:placeOfBirth gn:2655984; #Belfast
+        person:placeOfDeath gn:2643743; #London
+        dbo:spouse dbr:Angie_Best;
+        dbo:occupation dbr:Association_football_player;
+        dbo:team dbr:Manchester_United_F.C;
+        dbo:team dbr:Northern_Ireland_national_football_team;
+        dc:subject  <https://musicbrainz.org/release-group/cbf7472a-725d-3904-b0c4-2a73e4a8dfa2>; #musicalbum
+        foaf:isPrimaryTopicOf <https://www.duo.uio.no/handle/10852/68550>; #Article
+        foaf:isPrimaryTopicOf <object/video>.
+        
+<object/video>
+        a fabio:MovingImage;
+        crm:P102_has_title "George Best Superstar"^^xsd:string;
+        crm:P4_has_time-span "1981-03-10"^^xsd:dateTime;
+        dc:subject <person/george_best>;
+        dc:subject dbr:Angie_Best;
+        dcterms:publisher dbr:RTÉ_Television;
+        crm:P55_has_current_location gn:2963597; #Ireland
+        dcterms:language dbr:English;
+        crm:P14_carried_out_by dbr:gay_byrne.
+
+<person/gay_byrne>
+        rdf:type foaf:Person;
+        foaf:givenName "Gay"^^xsd:string;
+        foaf:familyName "Byrne"^^xsd:string;
+        dbo:birthDate "1934-08-05"^^xsd:dateTime;
+        dbo:deathDate "2019-11-04"^^xsd:dateTime;
+        owl:sameAs viaf:50802368;
+        owl:sameAs dbr:gay_byrne;
+        person:placeOfBirth gn:6690994; #Rialto, Dublin, Ireland
+        person:placeOfDeath gn:2962207; #Howth, Dublin, Ireland
+        dbo:occupation dbr:Broadcaster;
+        dbo:employer dbr:RTÉ_Television;
+        dbo:regionServed gn:2963597. #Ireland
+
+<object/map>
+        a dcmitype:StillImage;
+        dc:subject gn:2963597;
+        crm:P102_has_title "Ireland 1715"^^xsd:string;
+        crm:P4_has_time-span "1715"^^xsd:dateTime;
+        dc:creator viaf:47031432; #Johann Baptist Homann
+        dc:contributor viaf:54451455; #Nicolaes Visscher 
+        dcterms:isPartOf "American Geographical Society Library Digital Map Collection"^^xsd:string.
+
+<place/Ireland>
+        rdf:type crm:E53_Place;
+        gn:name "Ireland"^^xsd:string;
+        gn:alternateName "Éire"^^xsd:string;
+        owl:sameAs viaf:158208597;
+        owl:sameAs gn:2963597;
+        dbo:capital gn:2964574. #Dublin
+
+<object/photo>
+        a schema:Photograph;
+        dc:subject <person/george_best>;
+        schema:creator "Hans Peters"^^xsd:string;
+        crm:P102_has_title "Nederland tegen Noord Ierland ; George Best , kop"^^xsd:string;
+        schema:locationCreated gn:2750405; #Netherlands
+        dcterms:format schema:Photograph;
+        schema:sourceOrganization viaf:122149066341565600060. #Nationaal Archief
+        
+        
+
+        
+        
+    
+        
+
+        
+        
